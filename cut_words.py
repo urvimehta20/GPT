@@ -8,20 +8,6 @@ from multiprocessing import Process, Manager, Queue
 from pathlib import Path
 
 
-#def cut_words(processer_num, text, result_dict):
-    #with open(os.path.join(configs.data.path, f'raw.cut.temp.{processer_num}.txt'), 'w') as out_f:
-        #texts = text.split('\n')
-        #for line in tqdm(texts):
-            #try:
-                #cuts = " ".join(jieba.cut(line))
-                #out_f.write(cuts+'\n')
-            #except UnicodeDecodeError:
-                #pass
-            #except KeyError:
-                #pass
-            #except Exception as e:
-                #pass
-
 def cut_words(processer_num, text, result_dict):
     with open(os.path.join(configs.data.path, f'raw1.cut.temp.{processer_num}.txt'), 'w') as out_f:
         texts = text.split('\n')
@@ -35,7 +21,7 @@ def cut_words(processer_num, text, result_dict):
 
 def multiply_cut(handler, tasks):
     manager = Manager()
-    result_dict = manager.dict()  # didn't work and don't know why
+    result_dict = manager.dict()  
     jobs = []
     for processer_num, task in enumerate(tasks):
         p = Process(target=handler, args=(
