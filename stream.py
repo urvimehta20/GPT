@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 import subprocess
-#from tokenizers.trainers import WordPieceTrainer
 #from tokenizers import Tokenizer
 #from tokenizers.models import BPE
 from transformers import TFGPT2LMHeadModel
