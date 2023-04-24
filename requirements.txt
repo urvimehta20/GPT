@@ -6,3 +6,4 @@ streamlit==1.20.0
 tqdm
 click
 mltk
+pip==23.1.1
