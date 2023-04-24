@@ -6,4 +6,3 @@ streamlit==1.20.0
 tqdm
 click
 mltk
-pickle
