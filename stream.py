@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-import subprocess
 #from tokenizers import Tokenizer
 #from tokenizers.models import BPE
 from transformers import TFGPT2LMHeadModel
@@ -12,16 +11,6 @@ model = TFGPT2LMHeadModel.from_pretrained('gpt2')
 text = "Once upon a time, there was a"
 encoded_input = tokenizer.encode(text, return_tensors='tf')
 output = model(encoded_input)
-
-# Clone the repository
-if not os.path.exists("GPT"):
-    subprocess.run(["git", "clone", "https://github.com/urvimehta20/GPT.git"])
-
-# Change directory to the cloned repository
-os.chdir("GPT")
-
-# Install dependencies
-subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
 # Create a Streamlit app
 def main():
