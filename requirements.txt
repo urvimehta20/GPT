@@ -54,6 +54,7 @@ SecretStorage==3.3.1
 streamlit==1.20.0
 streamlit-chat==0.0.2.2
 streamlit-lottie==0.0.3
+subprocess
 tensorboard
 tensorboard-data-server
 tensorboard-plugin-wit
