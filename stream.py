@@ -5,12 +5,23 @@ import os
 from transformers import TFGPT2LMHeadModel
 from transformers import GPT2Tokenizer, TFGPT2Model
 import tensorflow as tf
+import subprocess
 
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = TFGPT2LMHeadModel.from_pretrained('gpt2')
 text = "Once upon a time, there was a"
 encoded_input = tokenizer.encode(text, return_tensors='tf')
 output = model(encoded_input)
+    
+#Clone the repository
+if not os.path.exists("GPT"):
+    subprocess.run(["git", "clone", "https://github.com/urvimehta20/GPT.git"])
+
+#Change directory to the cloned repository
+os.chdir("GPT")
+
+# Install dependencies
+subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
 # Create a Streamlit app
 def main():
@@ -28,7 +39,7 @@ def main():
             st.warning("Please enter a prompt.")
         else:
             # Call the generate_text function from the repository
-            #generated_text = generate_text(prompt)
+            generated_text = generated_text(prompt)
             if tf.shape(input_ids).numpy().size == 2:
             
                 output = model.generate(input_ids, max_length=100, num_return_sequences=1, no_repeat_ngram_size=1)
@@ -41,3 +52,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
