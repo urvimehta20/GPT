@@ -39,7 +39,7 @@ def main():
             st.warning("Please enter a prompt.")
         else:
             # Call the generate_text function from the repository
-            generated_text = generated_text(prompt)
+            # generated_text = generated_text(prompt)
             if tf.shape(input_ids).numpy().size == 2:
             
                 output = model.generate(input_ids, max_length=100, num_return_sequences=1, no_repeat_ngram_size=1)
