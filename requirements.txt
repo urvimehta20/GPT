@@ -57,7 +57,6 @@ SecretStorage==3.3.1
 streamlit==1.20.0
 streamlit-chat==0.0.2.2
 streamlit-lottie==0.0.3
-systemd-python==234
 tensorboard==2.12.0
 tensorboard-data-server==0.7.0
 tensorboard-plugin-wit==1.8.1
