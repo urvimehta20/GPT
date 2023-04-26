@@ -50,7 +50,6 @@ pandas==1.5.3
 Pillow==9.4.0
 pip==23.1.2
 protobuf==3.19.6
-python-apt==2.3.0+ubuntu2.1
 python-dateutil==2.8.2
 python-debian===0.1.43ubuntu1
 python-gnupg==0.4.8
