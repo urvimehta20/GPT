@@ -5,7 +5,7 @@ import os
 from transformers import TFGPT2LMHeadModel
 from transformers import GPT2Tokenizer, TFGPT2Model
 import tensorflow as tf
-import subprocess
+#import subprocess
 
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = TFGPT2LMHeadModel.from_pretrained('gpt2')
@@ -14,14 +14,14 @@ encoded_input = tokenizer.encode(text, return_tensors='tf')
 output = model(encoded_input)
     
 #Clone the repository
-if not os.path.exists("GPT"):
-    subprocess.run(["git", "clone", "https://github.com/urvimehta20/GPT.git"])
+#if not os.path.exists("GPT"):
+    #subprocess.run(["git", "clone", "https://github.com/urvimehta20/GPT.git"])
 
 #Change directory to the cloned repository
-os.chdir("GPT")
+#os.chdir("GPT")
 
 # Install dependencies
-subprocess.run(["pip", "install", "-r", "requirements.txt"])
+#subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
 # Create a Streamlit app
 def main():
