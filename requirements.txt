@@ -28,7 +28,6 @@ importlib-metadata==4.6.4
 joblib==1.2.0
 jsonschema==4.17.3
 keras==2.12.0
-language-selector==0.1
 MarkupSafe==2.1.2
 more-itertools==8.10.0
 nltk==3.8.1
